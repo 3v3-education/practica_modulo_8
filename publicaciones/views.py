@@ -3,7 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 def inicio(request):
-    return HttpResponse("Bienvenidos a Glups")
+    return render(request, "publicaciones/inicio.html")
 
 def lista_publicaciones(request):
-    return HttpResponse("Estas son las publicaciones de Glups")
+    publicaciones = [
+        {"titulo": "Mi primer publicación", "autor":"Jorge"},
+        {"titulo": "Aprendiendo Django", "autor":"Marcos"},
+        {"titulo": "Vistas y Rutas", "autor":"Lucia"}
+    ]
+    contexto = {"publicaciones": publicaciones }
+    return render(request, "publicaciones/lista_publicaciones.html", contexto)
