@@ -1,0 +1,226 @@
+/* =========================================
+   GLUPS - Estilos generales
+   Paleta: morados y azules
+   ========================================= */
+
+:root {
+    --color-primary: #6254c7;
+    --color-primary-dark: #44369b;
+    --color-secondary: #3984d6;
+    --color-accent: #8b7bea;
+    --color-background: #f4f5ff;
+    --color-surface: #ffffff;
+    --color-text: #252746;
+    --color-muted: #6d7190;
+    --color-border: #e3e5f5;
+    --shadow: 0 8px 24px rgba(57, 53, 126, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--color-text);
+    background:
+        radial-gradient(circle at top right, rgba(139, 123, 234, 0.13), transparent 32rem),
+        var(--color-background);
+    line-height: 1.6;
+}
+
+/* Encabezado y navegación */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 160;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem clamp(1.25rem, 5vw, 4rem);
+    color: white;
+    background: linear-gradient(115deg, var(--color-primary-dark), var(--color-primary), var(--color-secondary));
+    box-shadow: 0 4px 16px rgba(48, 43, 119, 0.2);
+}
+
+header > a {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* Contenido principal */
+main {
+    width: min(100% - 2rem, 1000px);
+    flex: 1;
+    margin: 3rem auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid rgba(227, 229, 245, 0.9);
+    border-radius: 22px;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+h2 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+}
+
+p {
+    color: var(--color-muted);
+}
+
+/* Enlaces y botón de acceso a publicaciones */
+main a {
+    color: var(--color-primary);
+    font-weight: 650;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+main > a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(110deg, var(--color-primary), var(--color-secondary));
+    box-shadow: 0 5px 14px rgba(98, 84, 199, 0.2);
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+main > a:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(98, 84, 199, 0.28);
+    text-decoration: none;
+}
+
+/* Listados de autores y publicaciones */
+main ul {
+    display: grid;
+    gap: 0.8rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+main li {
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 12px;
+    color: var(--color-text);
+    background: linear-gradient(100deg, #f7f6ff, #f5f9ff);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+main li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 5px 14px rgba(57, 53, 126, 0.08);
+}
+
+/* Pie de página */
+footer {
+    margin-top: auto;
+    padding: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    background: #292b59;
+}
+
+footer p {
+    margin: 0;
+    color: inherit;
+    font-size: 0.9rem;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 640px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        width: min(100% - 1.25rem, 1000px);
+        margin: 1.5rem auto;
+        padding: 1.4rem;
+        border-radius: 16px;
+    }
+}

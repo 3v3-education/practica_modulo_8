@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Glups{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'publicaciones/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'inicio' %}" class="logo">
+            <img src="{% static 'publicaciones/img/logo-glups.png' %}" alt="Logo de Glups">
+        </a>
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'lista_publicaciones' %}">Publicaciones</a>
+            <a href="{% url 'lista_autores' %}">Autores</a>
+            <a href="{% url 'contacto' %}">Contactanos</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Creado por Eve y Cami</p>
+    </footer>
+</body>
+</html>

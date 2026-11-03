@@ -1,0 +1,14 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block title %}
+Autores
+{% endblock %}
+
+{% block content %}
+  <h2>Listado de Autores</h2>
+    <ul>
+        {% for autor in autores %}
+        <li>{{ autor.nombre }} - {{ autor.post }} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
