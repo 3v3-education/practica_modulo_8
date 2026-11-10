@@ -1,0 +1,15 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block title %}
+Mnesaje Enviado
+{% endblock %}
+
+{% block content %}
+<section class="contacto-container">
+        <div class="contacto-header">
+        <h1>¡Mensaje Enviado!</h1>
+        <p>Gracias, {{ nombre }}. Recibimos tu consulta correctamente.</p>
+        <a href="{% url 'inicio' %}">Volver al inicio</a>
+    </div>
+</section>
+{% endblock %}

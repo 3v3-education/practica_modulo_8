@@ -1,0 +1,45 @@
+{% extends 'publicaciones/base.html' %}
+
+{% block title %}
+Contactanos
+{% endblock %}
+
+{% block content %}
+
+<section class="contacto-container">
+    <div class="contacto-header">
+        <h1>Contactanos</h1>
+        <p>Completá el formulario para enviarnos tu consulta.</p>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="campo-formulario">
+            <label for="{{ form.nombre.id_for_label }}">Nombre Completo</label>
+            {{ form.nombre }}
+            {{ form.nombre.errors }}
+        </div>
+        <div class="campo-formulario">
+            <label for="{{ form.correo.id_for_label }}">Correo Electronico</label>
+            {{ form.correo }}
+            {{ form.correo.errors }}
+        </div>
+        <div class="campo-formulario">
+            <label for="{{ form.asunto.id_for_label }}">Asunto</label>
+            {{ form.asunto}}
+            {{ form.asunto.errors }}
+        </div>
+        <div class="campo-formulario">
+            <label for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+            {{ form.mensaje }}
+            {{ form.mensaje.errors }}
+        </div>
+
+        <button type="submit" class="boton-contacto">
+            Enviar Mensaje
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}
