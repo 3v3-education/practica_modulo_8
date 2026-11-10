@@ -201,126 +201,160 @@ footer p {
 }
 
 
-/* =========================================
-   PÁGINA DE CONTACTO
-   ========================================= */
+/* ========================================
+   FORMULARIO DE CONTACTO - GLUPS
+======================================== */
 
+/* Contenedor principal */
 .contacto-container {
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(57, 53, 126, 0.10);
+    box-sizing: border-box;
 }
 
+/* Encabezado */
 .contacto-header {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .contacto-header h1 {
-    margin-bottom: 0.8rem;
-    color: var(--color-primary-dark);
+    color: #44369b;
+    font-size: 30px;
+    margin-bottom: 12px;
 }
 
 .contacto-header p {
-    color: var(--color-muted);
+    color: #6d7190;
+    font-size: 16px;
     line-height: 1.6;
 }
 
 /* Formulario */
-
 .formulario-contacto {
     display: flex;
     flex-direction: column;
-    gap: 1.3rem;
-    padding: 2rem;
-    border: 1px solid var(--color-border);
-    border-radius: 18px;
-    background-color: #ffffff;
-    box-shadow: var(--shadow);
+    gap: 20px;
 }
 
+/* Contenedores de los campos */
 .campo-formulario {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.campo-formulario label {
-    color: var(--color-primary-dark);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.campo-formulario input,
-.campo-formulario textarea {
+    gap: 8px;
     width: 100%;
-    padding: 0.85rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    background-color: #f9f9ff;
-    color: var(--color-text);
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Etiquetas */
+.campo-formulario label {
+    color: #44369b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Inputs */
+.campo-formulario input {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e3e5f5;
+    border-radius: 10px;
+    background-color: #f7f7ff;
+    color: #252746;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Textarea */
+.campo-formulario textarea {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    padding: 13px 15px;
+    border: 1px solid #e3e5f5;
+    border-radius: 10px;
+    background-color: #f7f7ff;
+    color: #252746;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Estado focus de los campos */
 .campo-formulario input:focus,
 .campo-formulario textarea:focus {
-    border-color: var(--color-primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(98, 84, 199, 0.12);
+    border-color: #6254c7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(98, 84, 199, 0.15);
 }
 
+/* Placeholders */
 .campo-formulario input::placeholder,
 .campo-formulario textarea::placeholder {
     color: #a1a3ba;
 }
 
-.campo-formulario textarea {
-    resize: vertical;
-    min-height: 130px;
+/* Errores de validación de Django */
+.campo-formulario .errorlist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #d64545;
+    font-size: 13px;
 }
 
-/* Botón de envío */
-
+/* Botón */
 .boton-contacto {
+    display: inline-block;
     width: 100%;
-    padding: 0.9rem 1.2rem;
+    padding: 14px 20px;
+    margin-top: 5px;
     border: none;
     border-radius: 10px;
+    background: linear-gradient(135deg, #6254c7, #3984d6);
     color: #ffffff;
-    background: linear-gradient(
-        110deg,
-        var(--color-primary),
-        var(--color-secondary)
-    );
-    font-size: 1rem;
-    font-weight: 650;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
 
+/* Hover del botón */
 .boton-contacto:hover {
+    background: linear-gradient(135deg, #44369b, #2868b5);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(98, 84, 199, 0.25);
+    box-shadow: 0 5px 15px rgba(98, 84, 199, 0.25);
 }
 
-.boton-contacto:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
-}
-
-/* Adaptación a celulares */
-
-@media (max-width: 640px) {
-    .formulario-contacto {
-        padding: 1.3rem;
+/* Responsive */
+@media (max-width: 600px) {
+    .contacto-container {
+        margin: 20px auto;
+        padding: 22px;
     }
 
     .contacto-header h1 {
-        font-size: 1.8rem;
+        font-size: 25px;
+    }
+
+    .formulario-contacto {
+        gap: 16px;
     }
 }
+
 
 
 /* Adaptación a pantallas pequeñas */
@@ -347,3 +381,5 @@ footer p {
         border-radius: 16px;
     }
 }
+
+

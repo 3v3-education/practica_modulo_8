@@ -11,7 +11,7 @@ Contactanos
         <h1>Contactanos</h1>
         <p>Completá el formulario para enviarnos tu consulta.</p>
     </div>
-    <form method="POST">
+    <form method="POST" class="formulario-contacto">
         {% csrf_token %}
         <div class="campo-formulario">
             <label for="{{ form.nombre.id_for_label }}">Nombre Completo</label>
