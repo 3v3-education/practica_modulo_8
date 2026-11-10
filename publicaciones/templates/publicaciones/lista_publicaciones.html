@@ -5,10 +5,15 @@ Publicaciones
 {% endblock %}
 
 {% block content %}
-  <h2>Listado de Publicaciones</h2>
-    <ul>
-        {% for publicacion in publicaciones %}
-        <li>{{ publicacion.titulo }} - {{ publicacion.autor }} </li>
-        {% endfor %}
-    </ul>
+  <h2>Ultimas Publicaciones</h2>
+    {% for publicacion in publicaciones %}        
+    <article>            
+      <h2>{{ publicacion.titulo }}</h2>            
+      <p>Escrito por {{ publicacion.autor }}</p>            
+      <p>Publicado el {{ publicacion.fecha_creacion }}</p>            
+      <p>{{ publicacion.contenido }}</p>        
+    </article>    
+    {% empty %}        
+    <p>Todavía no hay publicaciones.</p>    
+    {% endfor %}
 {% endblock %}

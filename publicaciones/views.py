@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Publicacion
 
 # Create your views here.
 def base(request):
@@ -9,11 +10,7 @@ def inicio(request):
     return render(request, "publicaciones/inicio.html")
 
 def lista_publicaciones(request):
-    publicaciones = [
-        {"titulo": "Mi primer publicación", "autor":"Jorge"},
-        {"titulo": "Aprendiendo Django", "autor":"Marcos"},
-        {"titulo": "Vistas y Rutas", "autor":"Lucia"}
-    ]
+    publicaciones = Publicacion.objects.filter(estado="publicado").order_by("-fecha_creacion")
     contexto = {"publicaciones": publicaciones }
     return render(request, "publicaciones/lista_publicaciones.html", contexto)
 
